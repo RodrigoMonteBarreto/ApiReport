@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="09/17/2021 16:02:50" ReportInfo.Modified="09/17/2021 20:29:45" ReportInfo.CreatorVersion="2021.4.0.0">
+  <Dictionary>
+    <MySqlDataConnection Name="Connection" ConnectionString="rijcmlqomabmqtwD7y3BaVO988Xrns8n0+Fpps4V7SdlS+EOKTcl9/rdcMTDgR/f/Meq5zo6FqhYz/IDUo6E01RrqjMOLiKUiYtkhgN07R8R0Panss=">
+      <TableDataSource Name="clientes" DataType="System.Int32" Enabled="true" TableName="clientes">
+        <Column Name="Id" DataType="System.Int32"/>
+        <Column Name="Nome" DataType="System.String"/>
+        <Column Name="Email" DataType="System.String"/>
+        <Column Name="CreatedAt" DataType="System.DateTime"/>
+        <Column Name="UpdatedAt" DataType="System.DateTime"/>
+      </TableDataSource>
+      <TableDataSource Name="empresas" DataType="System.Int32" Enabled="true" TableName="empresas">
+        <Column Name="Id" DataType="System.Int32"/>
+        <Column Name="Nome" DataType="System.String"/>
+        <Column Name="Email" DataType="System.String"/>
+        <Column Name="Foto" DataType="System.String"/>
+        <Column Name="CreatedAt" DataType="System.DateTime"/>
+        <Column Name="UpdatedAt" DataType="System.DateTime"/>
+      </TableDataSource>
+    </MySqlDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="66.15">
+      <TextObject Name="Text1" Left="18.9" Top="9.45" Width="680.4" Height="37.8" Fill.Color="Silver" Text="Listagem de Clientes" HorzAlign="Center" VertAlign="Center" Font="Arial, 16pt, style=Bold"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="70.15" Width="718.2" Height="37.8">
+      <TextObject Name="Text3" Left="18.9" Top="6" Width="94.5" Height="18.9" Border.Lines="Bottom" Text="Id" Font="Arial, 12pt, style=Bold"/>
+      <TextObject Name="Text5" Left="194.8" Top="6" Width="236.25" Height="18.9" Border.Lines="Bottom" Text="Nome" Font="Arial, 12pt, style=Bold"/>
+      <TextObject Name="Text7" Left="493" Top="6" Width="207.9" Height="18.9" Border.Lines="Bottom" Text="Email" Font="Arial, 12pt, style=Bold"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="111.95" Width="718.2" Height="47.25" DataSource="clientes">
+      <TextObject Name="Text4" Left="194.8" Top="9.45" Width="236.25" Height="28.35" Text="[clientes.Nome]" Font="Arial, 12pt"/>
+      <TextObject Name="Text9" Left="18.9" Top="9.45" Width="94.5" Height="18.9" Text="[clientes.Id]" Font="Arial, 10pt"/>
+      <TextObject Name="Text10" Left="500.85" Top="9.45" Width="94.5" Height="18.9" Text="[clientes.Email]" Font="Arial, 10pt"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="163.2" Width="718.2" Height="47.25" Border.Lines="Top">
+      <TextObject Name="Text8" Left="9.45" Top="14.8" Width="245.7" Height="18.9" Text="Página: [Page] / [TotalPages#]" Font="Arial, 12pt, style=Bold, Italic"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>
