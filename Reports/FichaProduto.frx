@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report ScriptLanguage="CSharp" ReportInfo.Created="09/17/2021 16:02:50" ReportInfo.Modified="09/18/2021 09:53:49" ReportInfo.CreatorVersion="2021.4.0.0">
+<Report ScriptLanguage="CSharp" ReportInfo.Created="09/17/2021 16:02:50" ReportInfo.Modified="09/18/2021 10:16:47" ReportInfo.CreatorVersion="2021.4.0.0">
   <Dictionary>
-    <MySqlDataConnection Name="Connection" ConnectionString="rijcmlqomabmqtwD7y3BaVO988Xrns8n0+Fpps4V7SdlS+EOKTcl9/rdcMTDgR/f/Meq5zo6FqhYz/IDUo6E01RrqjMOCA+tpXbEb7VRKCCBlGxPGU=">
+    <MySqlDataConnection Name="Connection" ConnectionString="rijcmlqomabmqtwD7y3BaVO988Xrns8n0+Fpps4V7SdlS+EOKTcl9/rdcMTDgR/f/Meq5zo6FqhYz/IDUo6E01RrqjMOKXzOINOloG/LkXjtVsELn4=">
       <TableDataSource Name="usuarios" DataType="System.Int32" Enabled="true" TableName="usuarios">
         <Column Name="Id" DataType="System.Int32"/>
         <Column Name="Nome" DataType="System.String"/>
@@ -33,22 +33,21 @@
       <TextObject Name="Text9" Left="211.65" Top="18.1" Width="425.25" Height="37.8" Text="[empresas.Nome]" HorzAlign="Center" VertAlign="Center" Font="Arial, 18pt, style=Bold"/>
       <TextObject Name="Text10" Left="211.65" Top="56.35" Width="425.25" Height="28.35" Text="[empresas.Email]" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt"/>
       <PictureObject Name="Picture1" Left="18.9" Top="9.45" Width="189" Height="132.3" DataColumn="empresas.Foto"/>
-      <TextObject Name="Text11" Left="214.35" Top="118.2" Width="245.7" Height="18.9" Text="Listagem de Produtos" VertAlign="Center" Font="Arial, 14pt"/>
+      <TextObject Name="Text11" Left="214.35" Top="118.2" Width="292.95" Height="18.9" Text="Ficha de Produto: [produtos.Ean]" VertAlign="Center" Font="Arial, 12pt"/>
       <TextObject Name="Text12" Left="519.75" Top="113.4" Width="198.45" Height="18.9" Text="[Date]" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Italic"/>
     </ReportTitleBand>
-    <PageHeaderBand Name="PageHeader1" Top="145.75" Width="718.2" Height="37.8">
-      <TextObject Name="Text3" Left="18.9" Top="6" Width="94.5" Height="28.35" Text="Id" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold"/>
-      <TextObject Name="Text5" Left="138.1" Top="6" Width="160.65" Height="28.35" Text="Descrição" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold"/>
-      <TextObject Name="Text7" Left="341.8" Top="6" Width="160.65" Height="28.35" Text="Preço" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold"/>
-      <TextObject Name="Text15" Left="557.55" Top="9.45" Width="151.2" Height="28.35" Text="EAN" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold"/>
-    </PageHeaderBand>
-    <DataBand Name="Data1" Top="187.55" Width="718.2" Height="66.15" DataSource="produtos">
-      <TextObject Name="Text16" Left="18.9" Top="18.9" Width="94.5" Height="18.9" Text="[produtos.Id]" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt"/>
-      <TextObject Name="Text17" Left="151.2" Top="18.9" Width="160.65" Height="18.9" Text="[produtos.Descricao]" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt"/>
-      <TextObject Name="Text18" Left="359.1" Top="18.9" Width="151.2" Height="18.9" Text="[produtos.Preco]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="Arial, 12pt" Trimming="EllipsisCharacter"/>
-      <TextObject Name="Text19" Left="585.9" Top="18.9" Width="122.85" Height="18.9" Text="[produtos.Ean]" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt"/>
+    <DataBand Name="Data1" Top="145.75" Width="718.2" Height="255.15" DataSource="produtos">
+      <TextObject Name="Text16" Left="85.05" Top="18.9" Width="94.5" Height="18.9" Text="[produtos.Id]" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt"/>
+      <TextObject Name="Text17" Left="113.4" Top="56.7" Width="226.8" Height="18.9" Text="[produtos.Descricao]" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt"/>
+      <TextObject Name="Text18" Left="113.4" Top="103.95" Width="151.2" Height="28.35" Text="[produtos.Preco]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="Arial, 12pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text19" Top="151.2" Width="122.85" Height="18.9" Text="[produtos.Ean]" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt"/>
+      <TextObject Name="Text3" Left="9.45" Top="15.45" Width="56.7" Height="18.9" Text="Id" VertAlign="Center" Font="Arial, 12pt, style=Bold"/>
+      <TextObject Name="Text5" Left="5.8" Top="53.25" Width="94.5" Height="28.35" Text="Descrição" VertAlign="Center" Font="Arial, 12pt, style=Bold"/>
+      <TextObject Name="Text7" Left="1.6" Top="100.5" Width="94.5" Height="28.35" Text="Preço" VertAlign="Center" Font="Arial, 12pt, style=Bold"/>
+      <TextObject Name="Text15" Left="132.3" Top="151.2" Width="151.2" Height="18.9" Text="EAN" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold"/>
+      <BarcodeObject Name="Barcode1" Left="481.95" Top="37.8" Width="180" Height="180" Text="Descrição: [produtos.Descricao]&#13;&#10;Preço: [produtos.Preco]&#13;&#10;EAN :[produtos.Ean]" ShowText="false" AllowExpressions="true" Barcode="QR Code" Barcode.ErrorCorrection="L" Barcode.Encoding="UTF8" Barcode.QuietZone="true"/>
     </DataBand>
-    <PageFooterBand Name="PageFooter1" Top="257.7" Width="718.2" Height="47.25" Border.Lines="Top">
+    <PageFooterBand Name="PageFooter1" Top="404.9" Width="718.2" Height="47.25" Border.Lines="Top">
       <TextObject Name="Text8" Left="9.45" Top="14.8" Width="245.7" Height="18.9" Text="Página: [Page] / [TotalPages#]" Font="Arial, 12pt, style=Bold, Italic"/>
     </PageFooterBand>
   </ReportPage>

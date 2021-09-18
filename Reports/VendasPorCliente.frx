@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="09/17/2021 16:02:50" ReportInfo.Modified="09/18/2021 11:26:08" ReportInfo.CreatorVersion="2021.4.0.0">
+  <Dictionary>
+    <MySqlDataConnection Name="Connection" ConnectionString="rijcmlqomabmqtwD7y3BaVO988Xrns8n0+Fpps4V7SdlS+EOKTcl9/rdcMTDgR/f/Meq5zo6FqhYz/IDUo6E01RrqjMOIwdR3QrLPsRWTEQEuGewj0=">
+      <TableDataSource Name="empresas" DataType="System.Int32" Enabled="true" TableName="empresas">
+        <Column Name="Id" DataType="System.Int32"/>
+        <Column Name="Nome" DataType="System.String"/>
+        <Column Name="Email" DataType="System.String"/>
+        <Column Name="Foto" DataType="System.String"/>
+        <Column Name="CreatedAt" DataType="System.DateTime"/>
+        <Column Name="UpdatedAt" DataType="System.DateTime"/>
+      </TableDataSource>
+      <TableDataSource Name="clientes" DataType="System.Int32" Enabled="true" TableName="clientes">
+        <Column Name="Id" DataType="System.Int32"/>
+        <Column Name="Nome" DataType="System.String"/>
+        <Column Name="Email" DataType="System.String"/>
+        <Column Name="CreatedAt" DataType="System.DateTime"/>
+        <Column Name="UpdatedAt" DataType="System.DateTime"/>
+      </TableDataSource>
+      <TableDataSource Name="vendas" DataType="System.Int32" Enabled="true" TableName="vendas">
+        <Column Name="Id" DataType="System.Int32"/>
+        <Column Name="ClienteId" DataType="System.Int32"/>
+        <Column Name="DataVenda" DataType="System.DateTime"/>
+        <Column Name="Totalvenda" DataType="System.Decimal"/>
+        <Column Name="CreatedAt" DataType="System.DateTime"/>
+        <Column Name="UpdatedAt" DataType="System.DateTime"/>
+      </TableDataSource>
+    </MySqlDataConnection>
+    <Relation Name="clientes_vendas" ParentDataSource="clientes" ChildDataSource="vendas" ParentColumns="Id" ChildColumns="ClienteId" Enabled="true"/>
+    <Total Name="TotalPorCliente" Expression="[vendas.Totalvenda]" Evaluator="Data1" PrintOn="GroupFooter1" ResetOnReprint="true"/>
+    <Total Name="TotalGeral" Expression="[vendas.Totalvenda]" Evaluator="Data1" PrintOn="ReportSummary1"/>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="141.75" Border.Lines="All">
+      <TextObject Name="Text9" Left="211.65" Top="18.1" Width="425.25" Height="37.8" Text="[empresas.Nome]" HorzAlign="Center" VertAlign="Center" Font="Arial, 18pt, style=Bold"/>
+      <TextObject Name="Text10" Left="211.65" Top="56.35" Width="425.25" Height="28.35" Text="[empresas.Email]" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt"/>
+      <PictureObject Name="Picture1" Left="18.9" Top="9.45" Width="189" Height="132.3" DataColumn="empresas.Foto"/>
+      <TextObject Name="Text11" Left="214.35" Top="118.2" Width="245.7" Height="18.9" Text="Listagem de Vendas por Clientes" VertAlign="Center" Font="Arial, 14pt"/>
+      <TextObject Name="Text12" Left="519.75" Top="113.4" Width="198.45" Height="18.9" Text="[Date]" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Italic"/>
+    </ReportTitleBand>
+    <GroupHeaderBand Name="GroupHeader1" Top="145.75" Width="718.2" Height="103.95" Condition="[vendas.ClienteId]">
+      <TextObject Name="Text13" Left="28.35" Top="14.45" Width="491.4" Height="18.9" Text="Cliente: [vendas.clientes.Id] - [vendas.clientes.Nome]" Font="Arial, 12pt, style=Bold"/>
+      <TextObject Name="Text16" Left="37.8" Top="52.25" Width="94.5" Height="18.9" Border.Lines="Bottom" Text="Data:" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text17" Left="633.15" Top="52.25" Width="75.6" Height="18.9" Border.Lines="Bottom" Text="Total:" HorzAlign="Right" Font="Arial, 10pt, style=Bold"/>
+      <DataBand Name="Data1" Top="253.7" Width="718.2" Height="37.8" DataSource="vendas">
+        <TextObject Name="Text14" Left="37.8" Top="9.45" Width="141.75" Height="18.9" Text="[vendas.DataVenda]" Format="Date" Format.Format="d" Font="Arial, 10pt, style=Bold"/>
+        <TextObject Name="Text15" Left="567" Top="9.45" Width="141.75" Height="18.9" Text="[vendas.Totalvenda]" Format="Currency" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" WordWrap="false" Font="Arial, 10pt, style=Bold" Trimming="EllipsisCharacter"/>
+      </DataBand>
+      <GroupFooterBand Name="GroupFooter1" Top="295.5" Width="718.2" Height="37.8">
+        <TextObject Name="Text19" Left="567" Top="9.45" Width="141.75" Height="18.9" Text="[TotalPorCliente]" Format="Currency" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" Font="Arial, 10pt, style=Bold"/>
+        <TextObject Name="Text18" Left="330.75" Top="9.45" Width="207.9" Height="18.9" Text="Total de Venda por Cliente:" HorzAlign="Right" Font="Arial, 10pt, style=Bold"/>
+      </GroupFooterBand>
+    </GroupHeaderBand>
+    <ReportSummaryBand Name="ReportSummary1" Top="337.3" Width="718.2" Height="37.8">
+      <TextObject Name="Text20" Left="330.75" Top="9.45" Width="207.9" Height="18.9" Text="Total de Geral das Vendas:" HorzAlign="Right" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text21" Left="567" Top="9.45" Width="141.75" Height="18.9" Text="[TotalGeral]" Format="Currency" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" Font="Arial, 10pt, style=Bold"/>
+      <LineObject Name="Line1" Left="330.75" Top="9.45" Width="387.45"/>
+    </ReportSummaryBand>
+    <PageFooterBand Name="PageFooter1" Top="379.1" Width="718.2" Height="47.25" Border.Lines="Top">
+      <TextObject Name="Text8" Left="9.45" Top="14.8" Width="245.7" Height="18.9" Text="Página: [Page] / [TotalPages#]" Font="Arial, 12pt, style=Bold, Italic"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

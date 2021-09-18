@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report ScriptLanguage="CSharp" ReportInfo.Created="09/17/2021 16:02:50" ReportInfo.Modified="09/17/2021 20:34:34" ReportInfo.CreatorVersion="2021.4.0.0">
+<Report ScriptLanguage="CSharp" ReportInfo.Created="09/17/2021 16:02:50" ReportInfo.Modified="09/17/2021 20:42:43" ReportInfo.CreatorVersion="2021.4.0.0">
   <Dictionary>
-    <MySqlDataConnection Name="Connection" ConnectionString="rijcmlqomabmqtwD7y3BaVO988Xrns8n0+Fpps4V7SdlS+EOKTcl9/rdcMTDgR/f/Meq5zo6FqhYz/IDUo6E01RrqjMOFLjPJhCfNuHk4BQA+6l9gY=">
+    <MySqlDataConnection Name="Connection" ConnectionString="rijcmlqomabmqtwD7y3BaVO988Xrns8n0+Fpps4V7SdlS+EOKTcl9/rdcMTDgR/f/Meq5zo6FqhYz/IDUo6E01RrqjMOGvbNR21NvlEkog3wBr3iYU=">
       <TableDataSource Name="usuarios" DataType="System.Int32" Enabled="true" TableName="usuarios">
         <Column Name="Id" DataType="System.Int32"/>
         <Column Name="Nome" DataType="System.String"/>
@@ -24,22 +24,20 @@
       <TextObject Name="Text9" Left="211.65" Top="18.1" Width="425.25" Height="37.8" Text="[empresas.Nome]" HorzAlign="Center" VertAlign="Center" Font="Arial, 18pt, style=Bold"/>
       <TextObject Name="Text10" Left="211.65" Top="56.35" Width="425.25" Height="28.35" Text="[empresas.Email]" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt"/>
       <PictureObject Name="Picture1" Left="18.9" Top="9.45" Width="189" Height="132.3" DataColumn="empresas.Foto"/>
-      <TextObject Name="Text11" Left="214.35" Top="118.2" Width="245.7" Height="18.9" Text="Listagem de Usuários" VertAlign="Center" Font="Arial, 14pt"/>
+      <TextObject Name="Text11" Left="214.35" Top="118.2" Width="245.7" Height="18.9" Text="Listagem de Usuarios" VertAlign="Center" Font="Arial, 14pt"/>
       <TextObject Name="Text12" Left="519.75" Top="113.4" Width="198.45" Height="18.9" Text="[Date]" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Italic"/>
     </ReportTitleBand>
     <PageHeaderBand Name="PageHeader1" Top="145.75" Width="718.2" Height="37.8">
       <TextObject Name="Text3" Left="18.9" Top="6" Width="94.5" Height="28.35" Text="Id" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold"/>
-      <TextObject Name="Text5" Left="138.1" Top="6" Width="160.65" Height="28.35" Text="Descrição" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold"/>
-      <TextObject Name="Text7" Left="341.8" Top="6" Width="160.65" Height="28.35" Text="Preço" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold"/>
-      <TextObject Name="Text15" Left="557.55" Top="9.45" Width="151.2" Height="28.35" Text="EAN" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold"/>
+      <TextObject Name="Text5" Left="213.7" Top="6" Width="160.65" Height="28.35" Text="Nome" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold"/>
+      <TextObject Name="Text7" Left="464.65" Top="6" Width="160.65" Height="28.35" Text="E-mail" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold"/>
     </PageHeaderBand>
-    <DataBand Name="Data1" Top="187.55" Width="718.2" Height="85.05" DataSource="usuarios">
-      <TextObject Name="Text13" Left="9.45" Top="18.9" Width="113.4" Height="28.35" Text="[produtos.Id]" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Italic"/>
-      <TextObject Name="Text14" Left="141.75" Top="9.45" Width="160.65" Height="37.8" Text="[produtos.Descricao]" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Italic"/>
-      <TextObject Name="Text16" Left="340.2" Top="9.45" Width="160.65" Height="37.8" Text="[produtos.Preco]" Format="Currency" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Center" VertAlign="Center" WordWrap="false" Font="Arial, 12pt" Trimming="EllipsisCharacter"/>
-      <TextObject Name="Text17" Left="567" Top="9.45" Width="141.75" Height="37.8" Text="[produtos.Ean]" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt"/>
+    <DataBand Name="Data1" Top="187.55" Width="718.2" Height="66.15" DataSource="usuarios">
+      <TextObject Name="Text20" Left="28.35" Top="18.9" Width="94.5" Height="18.9" Text="[usuarios.Id]" Font="Arial, 10pt"/>
+      <TextObject Name="Text21" Left="236.25" Top="18.9" Width="122.85" Height="18.9" Text="[usuarios.Nome]" Font="Arial, 10pt"/>
+      <TextObject Name="Text22" Left="472.5" Top="18.9" Width="170.1" Height="18.9" Text="[usuarios.Email]" Font="Arial, 10pt"/>
     </DataBand>
-    <PageFooterBand Name="PageFooter1" Top="276.6" Width="718.2" Height="47.25" Border.Lines="Top">
+    <PageFooterBand Name="PageFooter1" Top="257.7" Width="718.2" Height="47.25" Border.Lines="Top">
       <TextObject Name="Text8" Left="9.45" Top="14.8" Width="245.7" Height="18.9" Text="Página: [Page] / [TotalPages#]" Font="Arial, 12pt, style=Bold, Italic"/>
     </PageFooterBand>
   </ReportPage>
